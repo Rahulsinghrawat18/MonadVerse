@@ -1,25 +1,26 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import {ERC721Burnable} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
-import {ERC721Enumerable} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import {ERC721Pausable} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
-import {ERC721URIStorage} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {ERC721} from "node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import {ERC721Burnable} from "node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
+import {ERC721Enumerable} from "node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import {ERC721Pausable} from "node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
+import {ERC721URIStorage} from "node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import {Ownable} from "node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
+//IGASBACK
 import {IGasback} from "./interfaces/IGasback.sol";
 
 import {TokenURI} from "./helpers/TokenURI.sol";
 
-import {Dungeon} from "./Token/Gametoken.sol";
+import {BabyMon} from "./Token/Gametoken.sol";
 
-contract DarkestDungeon is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Burnable {
+contract MonadMaze is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Pausable, Ownable, ERC721Burnable {
    uint256 private _nextTokenId;
 
     IGasback public gasback;
 
-    Dungeon public dungeonToken; // Reference to the Dungeon token contract
+    BabyMon public BabyMonToken; // Reference to the BabyMonToken token contract
 
 
 
@@ -85,7 +86,7 @@ contract DarkestDungeon is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Pau
 
         gasback = IGasback(_gasback);
 
-        dungeonToken = Dungeon(_dungeonToken); // Set the Dungeon token contract address
+        BabyMonToken = BabyMon(_dungeonToken); // Set the BabyMon token contract address
 
     }
 
@@ -111,7 +112,7 @@ contract DarkestDungeon is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Pau
 
         uint256 tokensToMint = calculateTokenReward(record.totalScore);
 
-        dungeonToken.mintToken(player,record.totalScore); // Mint Dungeon tokens
+        BabyMonToken.mintToken(player,record.totalScore); // Mint Dungeon tokens
 
         emit TokensMinted(player, tokensToMint);
 

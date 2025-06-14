@@ -29,5 +29,5 @@ contract DeployScript is Script {
         vm.stopBroadcast();
     }
 }
-// forge script script/Deploy.s.sol https://swell-testnet.alt.technology --private-key <your key> --broadcast
-// forge script script/Deploy.s.sol https://swell-testnet.alt.technology--broadcast
+// forge script script/Deploy.s.sol https:// --private-key <your key> --broadcast
+// forge script script/Deploy.s.sol https://--broadcast

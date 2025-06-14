@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 
 // TODO: Replace with actual contract address and ABI
 const STAKING_CONTRACT_ADDRESS = '0x...';
-//const DNG_TOKEN_ADDRESS = '0x0dD2B638b6975d5bB755554AAE8e5f52De570FDd';
+//const BMD_TOKEN_ADDRESS = '0x0dD2B638b6975d5bB755554AAE8e5f52De570FDd';
 
 interface StakingStats {
   totalStaked: bigint;
@@ -145,21 +145,21 @@ export const StakingPage: React.FC = () => {
         <Card className="p-6 bg-[#0b171d] border-[#1a2a35] hover:border-[#2a3a45] transition-colors">
           <h3 className="text-sm font-medium text-gray-400 mb-3">Total Staked</h3>
           <p className="text-2xl font-semibold text-white">
-            {formatEther(stats.totalStaked)} DNG
+            {formatEther(stats.totalStaked)} BMD
           </p>
         </Card>
 
         <Card className="p-6 bg-[#0b171d] border-[#1a2a35] hover:border-[#2a3a45] transition-colors">
           <h3 className="text-sm font-medium text-gray-400 mb-3">Your Stake</h3>
           <p className="text-2xl font-semibold text-white">
-            {formatEther(stats.userStaked)} DNG
+            {formatEther(stats.userStaked)} BMD
           </p>
         </Card>
 
         <Card className="p-6 bg-[#0b171d] border-[#1a2a35] hover:border-[#2a3a45] transition-colors">
           <h3 className="text-sm font-medium text-gray-400 mb-3">Available Rewards</h3>
           <p className="text-2xl font-semibold text-white">
-            {formatEther(stats.availableRewards)} DNG
+            {formatEther(stats.availableRewards)} BMD
           </p>
         </Card>
 
@@ -181,7 +181,7 @@ export const StakingPage: React.FC = () => {
               disabled={isStaking || isUnstaking || isClaiming}
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">
-              DNG
+              BMD
             </span>
           </div>
 

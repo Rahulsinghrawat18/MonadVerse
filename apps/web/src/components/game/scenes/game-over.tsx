@@ -68,7 +68,7 @@ export class GameOverScene extends Phaser.Scene {
         const text = this.add.text(
           width / 2,
           height / 2 + 400,
-          `Congrats!!! You Got  ${gameState.score} DGN Token Result Stored Successfully`,
+          `Congrats!!! You Got  ${gameState.score} BMD Token Result Stored Successfully`,
           {
             fontSize: '24px',
             color: '#fff',
